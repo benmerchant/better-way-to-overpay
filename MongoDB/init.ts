@@ -4,6 +4,7 @@ const assert = require('assert')
 import USERS_DOCUMENT from './documents/users'
 import CONTRACTS_DOCUMENT from './documents/contracts'
 import AUTOMOBILES_DOCUMENT from './documents/automobiles'
+import CREDIT_CARD_SYSTEMS_DOCUMENT from './documents/creditCardSystems'
 
 const dbName = 'opay'
 // TODO: cant auth in
@@ -31,7 +32,11 @@ client.connect(err => {
       db.collection('automobiles').insertOne(AUTOMOBILES_DOCUMENT[0], (err, res) => {
         assert.equal(null, err)
         console.log(`inserted 1 document`)
-        client.close()
+        db.collection('creditCardSystems').insertOne(CREDIT_CARD_SYSTEMS_DOCUMENT[0], (err, res) => {
+          assert.equal(null, err)
+          console.log(`inserted 1 document`)
+          client.close()
+        })
       })
     })
     
