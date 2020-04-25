@@ -1,7 +1,8 @@
 const MongoClient = require('mongodb').MongoClient
 const assert = require('assert')
 
-import USERS_DOCUMENT from './documents/users.ts'
+import USERS_DOCUMENT from './documents/users'
+import CONTRACTS_DOCUMENT from './documents/contracts'
 
 const dbName = 'opay'
 // TODO: cant auth in
@@ -22,8 +23,13 @@ client.connect(err => {
 
   db.collection('users').insertOne(USERS_DOCUMENT[0], (err, res) => {
     assert.equal(null,err)
-    console.log(`inserted 1 document`);
-    client.close()
+    console.log(`inserted 1 document`)
+    db.collection('contracts').insertOne(CONTRACTS_DOCUMENT[0], (err, res) => {
+      assert.equal(null, err)
+      console.log(`inserted 1 document`)
+      client.close()
+    })
+    
   })
 
   
