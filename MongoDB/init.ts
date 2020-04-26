@@ -19,29 +19,60 @@ const client = new MongoClient(uri, options)
 
 client.connect(err => {
   assert.equal(null,err)
+  const seedPromises : any[] = []
   console.log('connected to MongoDB...')
-
   const db = client.db(dbName)
 
-  db.collection('users').insertOne(USERS_DOCUMENT[0], (err, res) => {
-    assert.equal(null,err)
-    console.log(`inserted 1 document`)
-    db.collection('contracts').insertOne(CONTRACTS_DOCUMENT[0], (err, res) => {
-      assert.equal(null, err)
-      console.log(`inserted 1 document`)
-      db.collection('automobiles').insertOne(AUTOMOBILES_DOCUMENT[0], (err, res) => {
-        assert.equal(null, err)
-        console.log(`inserted 1 document`)
-        db.collection('creditCardSystems').insertOne(CREDIT_CARD_SYSTEMS_DOCUMENT[0], (err, res) => {
-          assert.equal(null, err)
-          console.log(`inserted 1 document`)
-          client.close()
-        })
+  seedPromises.push(new Promise((resolve, reject) => {
+    const collectionName = 'users'
+    db.collection(collectionName)
+      .insertMany(USERS_DOCUMENT, (err, res) => {
+        if (err) reject(err)
+        else resolve({ mongoResult: res.result, collectionName: collectionName })
       })
     })
-    
-  })
+  )
 
-  
-  
+  seedPromises.push(new Promise((resolve, reject) => {
+    const collectionName = 'contracts'
+    db.collection(collectionName)
+      .insertMany(CONTRACTS_DOCUMENT, (err, res) => { 
+        if (err) reject(err)
+        else resolve({ mongoResult: res.result, collectionName: collectionName })
+      })
+    })
+  )
+
+  seedPromises.push(new Promise((resolve, reject) => {
+    const collectionName = 'creditCardSystems'
+    db.collection(collectionName)
+      .insertMany(CREDIT_CARD_SYSTEMS_DOCUMENT, (err, res) => { 
+        if (err) reject(err)
+        else resolve({ mongoResult: res.result, collectionName: collectionName })
+      })
+    })
+  )
+
+  seedPromises.push(new Promise((resolve, reject) => {
+    const collectionName = 'automobiles'
+    db.collection(collectionName)
+      .insertMany(AUTOMOBILES_DOCUMENT, (err, res) => { 
+        if (err) reject(err)
+        else resolve({ mongoResult: res.result, collectionName: collectionName })
+      })
+    })
+  )
+
+  Promise.all(seedPromises)
+    .then(messages => {
+      messages.forEach(message => {
+        // TODO: implement dynamic plural
+        console.log(`${message.mongoResult.n} ${message.collectionName} documents successfully inserted...`)        
+      })
+    })
 })
+
+
+
+
+
