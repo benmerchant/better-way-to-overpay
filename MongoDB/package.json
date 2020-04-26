@@ -1,0 +1,20 @@
+{
+  "name": "database",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "init": "npx tsc && nodemon -r esm init.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Merchant",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "mongodb": "^3.5.6",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.2"
+  }
+}

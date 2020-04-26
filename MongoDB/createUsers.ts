@@ -1,0 +1,1 @@
+const newUser = {user: "benjo",pwd:"changeToYourPassword",roles:[]}
