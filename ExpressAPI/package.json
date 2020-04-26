@@ -1,0 +1,20 @@
+{
+  "name": "opay_api",
+  "version": "0.1.0",
+  "description": "Handrolled Express.js API to serve routes for our MongoDB db",
+  "scripts": {
+    "serve:dev": "npx tsc && nodemon -r esm server.ts"
+  },
+  "author": "benjaminmerchant@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.13.2",
+    "esm": "^3.2.25",
+    "ts-node": "^8.9.0",
+    "typescript": "^3.8.3"
+  }
+}
