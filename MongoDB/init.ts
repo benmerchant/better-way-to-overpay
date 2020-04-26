@@ -17,8 +17,7 @@ const uri = `mongodb://${host}:${port}/${dbName}`
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 const client = new MongoClient(uri, options)
 
-// TODO: type these things that arent
-client.connect(err => {
+client.connect((err: object) => {
   assert.equal(null,err)
   const seedPromises : Promise<any>[] = []
   console.log('You have successfully connected to MongoDB...\n')
@@ -27,9 +26,9 @@ client.connect(err => {
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'users'
     db.collection(collectionName)
-      .insertMany(USERS_DOCUMENT, (err, res) => {
+      .insertMany(USERS_DOCUMENT, (err: object, res: object) => {
         if (err) reject(err)
-        else resolve({ mongoResult: res.result, collectionName: collectionName })
+        else resolve({ mongoResult: res['result'], collectionName: collectionName })
       })
     })
   )
@@ -37,9 +36,9 @@ client.connect(err => {
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'contracts'
     db.collection(collectionName)
-      .insertMany(CONTRACTS_DOCUMENT, (err, res) => { 
+      .insertMany(CONTRACTS_DOCUMENT, (err: object, res: object) => { 
         if (err) reject(err)
-        else resolve({ mongoResult: res.result, collectionName: collectionName })
+        else resolve({ mongoResult: res['result'], collectionName: collectionName })
       })
     })
   )
@@ -47,9 +46,9 @@ client.connect(err => {
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'creditCardSystems'
     db.collection(collectionName)
-      .insertMany(CREDIT_CARD_SYSTEMS_DOCUMENT, (err, res) => { 
+      .insertMany(CREDIT_CARD_SYSTEMS_DOCUMENT, (err: object, res: object) => { 
         if (err) reject(err)
-        else resolve({ mongoResult: res.result, collectionName: collectionName })
+        else resolve({ mongoResult: res['result'], collectionName: collectionName })
       })
     })
   )
@@ -57,9 +56,9 @@ client.connect(err => {
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'automobiles'
     db.collection(collectionName)
-      .insertMany(AUTOMOBILES_DOCUMENT, (err, res) => { 
+      .insertMany(AUTOMOBILES_DOCUMENT, (err: object, res: object) => { 
         if (err) reject(err)
-        else resolve({ mongoResult: res.result, collectionName: collectionName })
+        else resolve({ mongoResult: res['result'], collectionName: collectionName })
       })
     })
   )
