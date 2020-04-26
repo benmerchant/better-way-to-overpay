@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient // TODO: obvs, fix these module imports
 const assert = require('assert')
 
 import USERS_DOCUMENT from './documents/users'
@@ -17,10 +17,11 @@ const uri = `mongodb://${host}:${port}/${dbName}`
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 const client = new MongoClient(uri, options)
 
+// TODO: type these things that arent
 client.connect(err => {
   assert.equal(null,err)
-  const seedPromises : any[] = []
-  console.log('connected to MongoDB...')
+  const seedPromises : Promise<any>[] = []
+  console.log('You have successfully connected to MongoDB...\n')
   const db = client.db(dbName)
 
   seedPromises.push(new Promise((resolve, reject) => {
@@ -62,7 +63,8 @@ client.connect(err => {
       })
     })
   )
-
+  
+  // TODO: handle errors
   Promise.all(seedPromises)
     .then(messages => {
       messages.forEach(message => {
