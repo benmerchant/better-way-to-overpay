@@ -3,7 +3,7 @@ import express from 'express'
 import home from './components/home/routes'
 import automobiles from './components/automobiles/automobiles.routes'
 import contracts from './components/contracts/contracts.routes'
-import creditCardSystems from './components/creditCardSystems/routes'
+import creditCardSystems from './components/creditCardSystems/creditCardSystems.routes'
 import users from './components/users/users.routes'
 
 const router = express.Router()
