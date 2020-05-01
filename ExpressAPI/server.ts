@@ -1,7 +1,12 @@
-import express = require('express')
+import express from 'express'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const host = process.env.HOST
+const port = process.env.PORT
+
 const app = express()
-const host = 'http://localhost'
-const port = 8000
 
 app.get('/', (_req: any, res: any) => {
   res.send('Heyooooo, World!')
