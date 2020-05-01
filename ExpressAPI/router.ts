@@ -6,7 +6,6 @@ import contracts from './components/contracts/routes'
 import creditCardSystems from './components/creditCardSystems/routes'
 import users from './components/users/routes'
 
-const app = express()
 const router = express.Router()
 
 router.use('/', home)
