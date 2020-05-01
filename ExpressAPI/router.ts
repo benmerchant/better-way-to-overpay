@@ -1,17 +1,17 @@
 import express from 'express'
 
-import home from './components/home/routes'
-import automobiles from './components/automobiles/routes'
-import contracts from './components/contracts/routes'
-import creditCardSystems from './components/creditCardSystems/routes'
-import users from './components/users/users.routes'
+import Home from './components/home/routes'
+import Automobiles from './components/automobiles/automobiles.routes'
+import Contracts from './components/contracts/contracts.routes'
+import CreditCardSystems from './components/creditCardSystems/creditCardSystems.routes'
+import Users from './components/users/users.routes'
 
 const router = express.Router()
 
-router.use('/', home)
-router.use('/automobiles', automobiles)
-router.use('/contracts', contracts)
-router.use('/creditCardSystems', creditCardSystems)
-router.use('/users', users)
+router.use('/', Home)
+router.use('/automobiles', Automobiles)
+router.use('/contracts', Contracts)
+router.use('/creditCardSystems', CreditCardSystems)
+router.use('/users', Users)
 
 export default router
