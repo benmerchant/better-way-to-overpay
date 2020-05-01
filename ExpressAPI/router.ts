@@ -1,10 +1,10 @@
 import express from 'express'
 
-import home from './home'
-import automobiles from './automobiles'
-import contracts from './contracts'
-import creditCardSystems from './creditCardSystems'
-import users from './users'
+import home from './components/home/routes'
+import automobiles from './components/automobiles/routes'
+import contracts from './components/contracts/routes'
+import creditCardSystems from './components/creditCardSystems/routes'
+import users from './components/users/routes'
 
 const app = express()
 const router = express.Router()
