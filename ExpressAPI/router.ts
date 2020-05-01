@@ -1,7 +1,7 @@
 import express from 'express'
 
 import home from './components/home/routes'
-import automobiles from './components/automobiles/routes'
+import automobiles from './components/automobiles/automobiles.routes'
 import contracts from './components/contracts/routes'
 import creditCardSystems from './components/creditCardSystems/routes'
 import users from './components/users/users.routes'
