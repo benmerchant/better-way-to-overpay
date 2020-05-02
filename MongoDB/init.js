@@ -1,11 +1,14 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
 var MongoClient = require('mongodb').MongoClient; // TODO: obvs, fix these module imports
-var assert = require('assert');
-var users_1 = require("./documents/users");
-var contracts_1 = require("./documents/contracts");
-var automobiles_1 = require("./documents/automobiles");
-var creditCardSystems_1 = require("./documents/creditCardSystems");
+var assert = require("assert");
+var users_1 = __importDefault(require("./documents/users"));
+var contracts_1 = __importDefault(require("./documents/contracts"));
+var automobiles_1 = __importDefault(require("./documents/automobiles"));
+var creditCardSystems_1 = __importDefault(require("./documents/creditCardSystems"));
 var dbName = 'opay';
 // TODO: cant auth in
 // const dbUser = 'benjo'
