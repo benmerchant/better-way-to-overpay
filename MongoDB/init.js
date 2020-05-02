@@ -13,9 +13,9 @@ var dbName = 'opay';
 // TODO: cant auth in
 // const dbUser = 'benjo'
 // const dbPassword = 'changeToYourPassword'
-var port = 27017;
-var host = '127.0.0.1';
-var uri = "mongodb://" + host + ":" + port + "/" + dbName;
+var port = process.env.PORT;
+var dbUrl = process.env.DB_BASE_URL;
+var uri = dbUrl + ":" + port + "/" + dbName;
 var options = { useNewUrlParser: true, useUnifiedTopology: true };
 var client = new MongoClient(uri, options);
 client.connect(function (err) {

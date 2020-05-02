@@ -1,7 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
 var MongoClient = require('mongodb').MongoClient;
 var assert = require("assert");
+var dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1["default"].config();
 var COLLECTIONS = [
     'users',
     'contracts',
@@ -9,9 +14,9 @@ var COLLECTIONS = [
     'automobiles'
 ];
 var dbName = 'opay';
-var port = 27017;
-var host = '127.0.0.1';
-var uri = "mongodb://" + host + ":" + port + "/" + dbName;
+var port = process.env.PORT;
+var dbUrl = process.env.DB_BASE_URL;
+var uri = dbUrl + ":" + port + "/" + dbName;
 var options = { useNewUrlParser: true, useUnifiedTopology: true };
 var client = new MongoClient(uri, options);
 client.connect(function (err) {

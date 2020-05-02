@@ -1,5 +1,8 @@
 const MongoClient = require('mongodb').MongoClient
 import assert = require('assert')
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const COLLECTIONS = [
   'users',
@@ -9,9 +12,9 @@ const COLLECTIONS = [
 ]
 
 const dbName = 'opay'
-const port = 27017
-const host = '127.0.0.1'
-const uri = `mongodb://${host}:${port}/${dbName}`
+const port = process.env.PORT
+const dbUrl = process.env.DB_BASE_URL
+const uri = `${dbUrl}:${port}/${dbName}`
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 const client = new MongoClient(uri, options)

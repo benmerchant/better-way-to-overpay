@@ -10,9 +10,9 @@ const dbName = 'opay'
 // TODO: cant auth in
 // const dbUser = 'benjo'
 // const dbPassword = 'changeToYourPassword'
-const port = 27017
-const host = '127.0.0.1'
-const uri = `mongodb://${host}:${port}/${dbName}`
+const port = process.env.PORT
+const dbUrl = process.env.DB_BASE_URL
+const uri = `${dbUrl}:${port}/${dbName}`
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 const client = new MongoClient(uri, options)
