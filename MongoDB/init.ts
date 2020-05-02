@@ -1,5 +1,8 @@
 const MongoClient = require('mongodb').MongoClient // TODO: obvs, fix these module imports
 import assert = require('assert')
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 import USERS_DOCUMENT from './documents/users'
 import CONTRACTS_DOCUMENT from './documents/contracts'

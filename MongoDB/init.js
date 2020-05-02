@@ -5,6 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var MongoClient = require('mongodb').MongoClient; // TODO: obvs, fix these module imports
 var assert = require("assert");
+var dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1["default"].config();
 var users_1 = __importDefault(require("./documents/users"));
 var contracts_1 = __importDefault(require("./documents/contracts"));
 var automobiles_1 = __importDefault(require("./documents/automobiles"));
