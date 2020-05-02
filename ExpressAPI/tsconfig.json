@@ -2,6 +2,11 @@
   "compilerOptions": {
     "types": ["node"],
     "typeRoots": ["./typings"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "outDir": "dist",
+    "sourceMap": true
   }
 }
