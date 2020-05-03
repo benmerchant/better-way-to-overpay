@@ -1,8 +1,8 @@
 # Better Way To Overpay: a MEVN app
 
-## MongoDB v0.1.------ (Current) @benmerchant
+## /MongoDB Version 0 ChangeLog
 
-### 2020.05.03 Version 0.1.1 (Stable)
+### 2020.05.03, Version 0.2.0 (Current), @benmerchant
 
 - PR #24
 - move `.gitignore` from root dir to MongoDB
@@ -15,6 +15,7 @@
 
 ### 2020.04.25, Version 0.1.0 (Stable)
 
+- install MongoDB v3.5.6 Node.js Client
 - PR #10 - (first pull request)
 - create `init.ts`
 - create `/documents` & move documents into it
@@ -29,3 +30,5 @@
 ## Vue.js
 
 ## Node.js v10.16.3
+
+## npm v6.9.0
