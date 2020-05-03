@@ -4,7 +4,7 @@
     "typeRoots": ["./typings"],
     "esModuleInterop": true,
     "target": "es5",
-    "module": "commonjs",
+    "module": "ES2015",
     "strict": true,
     "outDir": "dist",
     "sourceMap": true
