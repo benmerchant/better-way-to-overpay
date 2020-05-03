@@ -28,18 +28,18 @@ client.connect((err: object) => {
 
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'users'
-    db.collection(collectionName)
-      .insertMany(USERS_DOCUMENT, (err: object, res: object) => {
+    db.collection(collectionName) // TODO: res needs type
+      .insertMany(USERS_DOCUMENT, (err: object, res: any) => {
         if (err) reject(err)
-        else resolve({ mongoResult: res['result'], collectionName: collectionName })
+        else resolve({ mongoResult: res.result, collectionName: collectionName })
       })
     })
   )
 
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'contracts'
-    db.collection(collectionName)
-      .insertMany(CONTRACTS_DOCUMENT, (err: object, res: object) => { 
+    db.collection(collectionName) // TODO: res needs type
+      .insertMany(CONTRACTS_DOCUMENT, (err: object, res: any) => { 
         if (err) reject(err)
         else resolve({ mongoResult: res['result'], collectionName: collectionName })
       })
@@ -48,8 +48,8 @@ client.connect((err: object) => {
 
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'creditCardSystems'
-    db.collection(collectionName)
-      .insertMany(CREDIT_CARD_SYSTEMS_DOCUMENT, (err: object, res: object) => { 
+    db.collection(collectionName) // TODO: res needs type
+      .insertMany(CREDIT_CARD_SYSTEMS_DOCUMENT, (err: object, res: any) => { 
         if (err) reject(err)
         else resolve({ mongoResult: res['result'], collectionName: collectionName })
       })
@@ -58,8 +58,8 @@ client.connect((err: object) => {
 
   seedPromises.push(new Promise((resolve, reject) => {
     const collectionName = 'automobiles'
-    db.collection(collectionName)
-      .insertMany(AUTOMOBILES_DOCUMENT, (err: object, res: object) => { 
+    db.collection(collectionName) // TODO: res needs type
+      .insertMany(AUTOMOBILES_DOCUMENT, (err: object, res: any) => { 
         if (err) reject(err)
         else resolve({ mongoResult: res['result'], collectionName: collectionName })
       })
