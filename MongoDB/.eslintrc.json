@@ -19,6 +19,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "quotes": ["error", "single"]
+        "quotes": ["error", "single"],
+        "linebreak-style": ["error", "windows"]
     }
 }
