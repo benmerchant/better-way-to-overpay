@@ -2,6 +2,13 @@
 
 ## /MongoDB Version 0 ChangeLog
 
+### 
+
+### 2020.05.02, Version 0.3.0 (Stable)
+
+- PR #23
+- create `wipeout.ts` to empty 
+
 ### 2020.05.03, Version 0.2.0 (Current), @benmerchant
 
 - PR #24
@@ -25,7 +32,34 @@
   - users
 - `createUser.ts` (does not work, shouldn't've pushed)
 
-## Express.js 4.17.1
+## Express.js
+
+### 2020.05.02, Version 0.3.0 (Stable)
+
+- PR #22
+- set up automobile model, controller, route
+- set up contact model, controller, route
+- set up creditCardSystems model, controller, route
+
+### 2020.05.01, Version 0.2.0 (Stable)
+
+- PR #19
+- install mongoose
+- connect to db in `server.ts`
+- add `routes`, `controller` for `users`
+- (accidentally) commit `.js` files converted from `.ts`
+
+### 2020.04.30, Version 0.1.0 (Stable)
+
+- PR #18 - (first pull request)
+- install expressjs 4.17.1
+- create `.env` (not committed)
+- create `router.ts`
+- create routing file for each `/component`
+- setup basic get routes
+- create `server.ts`
+- add `tsconfig.json`
+
 
 ## Vue.js
 
