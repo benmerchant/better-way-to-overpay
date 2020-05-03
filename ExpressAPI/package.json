@@ -1,10 +1,10 @@
 {
   "name": "opay_api",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Handrolled Express.js API to serve routes for our MongoDB db",
   "scripts": {
     "serve:dev": "npx tsc && nodemon -r esm src/server.ts ",
-    "lint": "eslint --ignore-path .gitignore src/**.ts"
+    "lint": "eslint --ignore-path .gitignore src/**.ts src/components/**/"
   },
   "author": "benjaminmerchant@gmail.com",
   "license": "ISC",

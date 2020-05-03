@@ -41,6 +41,21 @@
 
 ## Express.js
 
+### 2020.05.02, Version 0.4.0 (Current)
+
+- PR #30
+- initialize ESLint
+- set ESLint rules
+  - linebreak-style: windows
+  - console.log: only [warn, error, info]
+  - no semicolons
+  - single quotes
+  - no error for absent extension
+  - add settings for extensions and node resolver
+- fix linting errors
+- add linting script in `package.json`
+- move files into `/src`
+
 ### 2020.05.02, Version 0.3.0 (Stable)
 
 - PR #22
