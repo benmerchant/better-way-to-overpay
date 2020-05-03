@@ -28,8 +28,8 @@ client.connect((err: object) => {
   for (let ii=0; ii<COLLECTIONS.length; ii++) {
     deletePromises.push(new Promise((resolve, reject) => {
       db.collection(COLLECTIONS[ii])
-        .deleteMany({}, (err: object, res: object) => {
-          if (err) reject(err)
+        .deleteMany({}, (err: object, res: any) => {
+          if (err) reject(err) // TODO: res needs type
           else resolve({ mongoResult: res['result'], collectionName: COLLECTIONS[ii] })
         })
     })
