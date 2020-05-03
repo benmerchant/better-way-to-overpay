@@ -2,14 +2,21 @@
 
 ## /MongoDB Version 0 ChangeLog
 
-### 
+### 2020.05.02, Version 0.3.1 (currentgit ), @benmerchant
 
-### 2020.05.02, Version 0.3.0 (Stable)
+- PR #26
+- initialize ESLint
+- delete `createUsers`
+- tell ESLint to ingore windows EOL
+- tell ESLint to allow console.warn,info,error
+- tell ESLint no semicolons
+
+### 2020.05.02, Version 0.3.0 (Stable), @benmerchant
 
 - PR #23
-- create `wipeout.ts` to empty 
+- create `wipeout.ts` to empty
 
-### 2020.05.03, Version 0.2.0 (Current), @benmerchant
+### 2020.05.03, Version 0.2.0 (Stable), @benmerchant
 
 - PR #24
 - move `.gitignore` from root dir to MongoDB
@@ -20,7 +27,7 @@
 - create `/src` & move all .ts files into it
 - create `.env` (not committed)
 
-### 2020.04.25, Version 0.1.0 (Stable)
+### 2020.04.25, Version 0.1.0 (Stable), @benmerchant
 
 - install MongoDB v3.5.6 Node.js Client
 - PR #10 - (first pull request)
@@ -59,7 +66,6 @@
 - setup basic get routes
 - create `server.ts`
 - add `tsconfig.json`
-
 
 ## Vue.js
 
