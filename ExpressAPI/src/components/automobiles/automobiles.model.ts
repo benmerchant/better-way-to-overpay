@@ -1,24 +1,24 @@
 import mongoose from 'mongoose'
 
-const Schema = mongoose.Schema
+const { Schema } = mongoose
 
 const AutomobileSchema = new Schema({
   make: {
     type: String,
-    required: true
+    required: true,
   },
   model: {
     type: String,
-    required: true
+    required: true,
   },
   year: {
     type: Number,
-    required: true
+    required: true,
   },
   VIN: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 })
 
 export default mongoose.model('Automobile', AutomobileSchema)

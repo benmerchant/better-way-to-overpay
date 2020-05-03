@@ -1,48 +1,48 @@
 import mongoose from 'mongoose'
 
-const Schema = mongoose.Schema
+const { Schema } = mongoose
 
 const ContractSchema = new Schema({
   dateCreated: {
     type: Date,
-    required: true
+    required: true,
   },
   originalBalance: {
     type: Number,
-    required: true
+    required: true,
   },
   paymentFrequency: { // TODO: make own entity,
     type: String,
-    required: true
+    required: true,
   },
   normalPaymentAmount: {
     type: Number,
-    required: true
+    required: true,
   },
   automobiles: {
     type: String, // TODO: MongoObjectId
-    required: true
+    required: true,
   },
   user: {
     type: String, // TODO: MongoObjectId
-    required: true
+    required: true,
   },
   payments: [
     {
       dateOfPayment: {
         type: Date,
-        required: true
+        required: true,
       },
       amount: {
         type: Number,
-        required: true
+        required: true,
       },
       paymentInstrument: { // TODO: MongoObjectId
         type: String,
-        required: true 
-      } 
-    }
-  ]
+        required: true,
+      },
+    },
+  ],
 })
 
 export default mongoose.model('Contract', ContractSchema)
