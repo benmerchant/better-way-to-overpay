@@ -20,11 +20,11 @@ mongoose.connect(`${connString}`, options)
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 db.once('open', () => {
-  console.log(`connected to MongoDB`)  
+  console.info('connected to MongoDB')
 })
 
 app.use(router)
 
 app.listen(port, () => {
-  console.log(`oPay API listening on ${host}${port}`)
+  console.info(`oPay API listening on ${host}${port}`)
 })

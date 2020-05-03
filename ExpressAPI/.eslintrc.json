@@ -19,5 +19,23 @@
         "@typescript-eslint"
     ],
     "rules": {
-    }
+			"linebreak-style": ["error", "windows"],
+			"no-console": ["error", {
+				"allow": ["warn", "error", "info"]
+			}],
+			"semi": ["error", "never"],
+			"quotes": ["error", "single"],
+			"import/extensions": ["error", "never"]
+		},
+		"settings": {
+			"import/extensions": [".ts", ".js"],
+			"import/resolver": {
+				"node": {
+					"extensions": [
+						".js",
+						".ts"
+					]
+				}
+			}
+		}
 }
