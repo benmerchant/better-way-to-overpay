@@ -1,6 +1,6 @@
 {
   "name": "opay_api",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Handrolled Express.js API to serve routes for our MongoDB db",
   "scripts": {
     "serve:dev": "npx tsc && nodemon -r esm server.ts "
