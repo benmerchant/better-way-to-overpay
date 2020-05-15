@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
+import hacksaw from './hacksaw'
 import router from './router'
 
 dotenv.config()
@@ -19,12 +20,13 @@ mongoose.connect(`${connString}`, options)
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
+
 db.once('open', () => {
-  console.info('connected to MongoDB')
+  hacksaw.log('info', 'Connected to MongoDB')
 })
 
 app.use(router)
 
 app.listen(port, () => {
-  console.info(`oPay API listening on ${host}${port}`)
+  hacksaw.log('info', `oPay API listening on ${host}${port}`)
 })
