@@ -19,7 +19,7 @@ const app = express()
 mongoose.connect(`${connString}`, options)
 
 const db = mongoose.connection
-db.on('error', console.error.bind(console, 'connection error:'))
+db.on('error', (console.error.bind(hacksaw.log('error', 'connection error: '))))
 
 db.once('open', () => {
   hacksaw.log('info', 'Connected to MongoDB')
@@ -28,5 +28,5 @@ db.once('open', () => {
 app.use(router)
 
 app.listen(port, () => {
-  hacksaw.log('info', `oPay API listening on ${host}${port}`)
+  hacksaw.log('info', `oPay API listening on ${host}:${port}`)
 })
